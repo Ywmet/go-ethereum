@@ -122,6 +122,7 @@ func newLondonInstructionSet() JumpTable {
 // constantinople, istanbul, petersburg and berlin instructions.
 func newBerlinInstructionSet() JumpTable {
 	instructionSet := newIstanbulInstructionSet()
+        enable3855(&instructionSet) // PUSH0 instruction
 	enable2929(&instructionSet) // Gas cost increases for state access opcodes https://eips.ethereum.org/EIPS/eip-2929
 	return validate(instructionSet)
 }
